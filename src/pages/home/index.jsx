@@ -19,6 +19,7 @@ export default function Home() {
         <div className="content-Home">
             <div className={`part1 ${start ? "open" : null}`}>
                 <p className="textTitle">HALAN</p>
+                <p className="textTitle">(Amor de Álison)</p>
             </div>
 
             <div className="content-coracao">
@@ -28,6 +29,7 @@ export default function Home() {
 
             <div className={`part2 ${start ? "open" : null}`}>
                 <p className="textTitle">ÁLISON</p>
+                <p className="textTitle">(Amor de Halan)</p>
             </div>
 
         </div>
