@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Adamina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Oleo+Script:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+html, body{
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.textNormal{
+    font-family: "Adamina", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.textTitle{
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.content-Home{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.part1, .part2{
+    height: calc(100vh - 20em);
+    width: calc(100vw - 20em);
+    display: flex;
+    padding: 10em;
+    overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.part1 p, .part2 p{
+    font-size: 4em;
+    color: inherit;
+}
+
+.part1{
+    position: relative;
+    z-index: 10;
+    background-color: #F0F0E5;
+    justify-content: flex-end;
+    color: #F05859;
+    box-shadow: 10px 0px 20px 0px #00000057;
+}
+
+.part2{
+    position: relative;
+    z-index: 5;
+    background-color: #F05859;
+    justify-content: flex-start;
+    color: #F0F0E5;
+}
+
+.content-coracao{
+    position: absolute;
+    z-index: 12;
+    display: flex;
+    margin-top: 7em;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.coracao{
+    height: 200px;
+    width: 250px;
+    transition: all 1s;
+    cursor: pointer;
+    animation: core .5s linear;
+}
+
+.coracao:hover{
+    transform: scale(1.2);
+}
+
+.part1.open{
+    animation: open1 2s linear;
+}
+
+.part2.open{
+    animation: open2 2s linear;
+}
+
+.opens{
+    animation: coreOpen 2s ease-in-out;
+}
+
+@keyframes core {
+    0%{
+        transform: translateY(-200%) translateX(-200%) rotate(40deg) scale(2);
+
+    }
+
+    100%{
+        transform: translateY(0) translateX(0) rotate(0) scale(1);
+    }
+}
+
+@keyframes coreOpen {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(200);
+    }
+}
+
+@keyframes open1 {
+    100%{
+        transform: translateX(-200%);
+    }
+
+    0%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes open2 {
+    100%{
+        transform: translateX(200%);
+    }
+
+    0%{
+        transform: translateX(0);
+    }
 }
